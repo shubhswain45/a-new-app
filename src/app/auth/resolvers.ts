@@ -128,9 +128,9 @@ const mutations = {
 
             ctx.res.cookie('__connectify_token', userToken, {
                 httpOnly: true,
-                secure: false,
+                secure: true,
                 maxAge: 1000 * 60 * 60 * 24,
-                sameSite: 'lax',
+                sameSite: 'none',
                 path: '/',
             });
 
@@ -180,9 +180,9 @@ const mutations = {
             if (existingUser.isVerified) {
                 ctx.res.cookie('__connectify_token', userToken, {
                     httpOnly: true,
-                    secure: false,
+                    secure: true,
                     maxAge: 1000 * 60 * 60 * 24,
-                    sameSite: 'lax',
+                    sameSite: 'none',
                     path: '/',
                 });
             }
